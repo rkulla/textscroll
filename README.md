@@ -10,12 +10,15 @@ It supports many file types including:
 You can choose between different kinds of scroll modes and options, such
 as changing the scroll speed, pausing, colors, search strings, case, and info.
 
+If a file has extra blank lines they won't be shown, so that you're never 
+staring at empty space.
+
 Some examples of possible uses for textscroll:
 
 - As a screen saver.
 
 - Practice speed reading. Just set the program at a fast
-  speed and see if you can keep up!
+  speed and see if you can keep up.
 
 - Playing a musical instrument while reading sheet music.
 
@@ -41,7 +44,6 @@ options, unless you use the -f flag. For example:
     Correct:   ./textscroll file.txt -options
     Incorrect: ./textscroll -options file.txt
     Correct:   ./textscroll -options -f file.txt
-
 
 To scroll a log file and highlight any lines containing the string 'lincoln':
 
@@ -102,7 +104,7 @@ While textscroll is running you can use the following option keys:
     'f' to speed scrolling up in 25 percent increments
     's' to slow scrolling speed down in 25 percent increments
     'o' to go back to the original scroll speed
-    'a' to toggle Auto-pausing on/off
+    'a' to toggle Auto-pausing on/off. Off by default. Can pause on highlights.
     'e' to open the file you're scrolling in an external editor. (Uses the 
         environment variables $VISUAL then $EDITOR or /bin/vi if none are set)
     'i' to view detailed file/program/etc information

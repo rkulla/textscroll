@@ -525,6 +525,7 @@ void fmt(void)
     }
 }
 
+/* Make it so you never have to stare at empty space */
 void strip_extra_blanks(void)
 {
     FILE *fp_read, *fp_write;
@@ -540,6 +541,7 @@ void strip_extra_blanks(void)
     }
 
     while (fgets(buf, sizeof buf, fp_read)) {
+
         /* Don't print 2+ blank lines */        
         if (buf[0] == CARRIAGE_RETURN || buf[0] == LINEFEED) {
             blank++;
@@ -806,8 +808,8 @@ void get_editor(void)
     }
 
    if ((access(topt.editor, F_OK)) != 0) {
-       if (!(access("/bin/vi", F_OK))) {
-           topt.editor = "/bin/vi";
+       if (!(access("/usr/bin/vi", F_OK))) {
+           topt.editor = "/usr/bin/vi";
        } else {
            topt.editor = "None";
        }
